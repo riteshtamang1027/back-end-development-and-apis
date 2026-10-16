@@ -20,3 +20,22 @@ console.log(exist);
 const buff = Buffer.from("Ritesh is the best Software Engineer");
 
 console.log(buff);
+
+
+const buff1 = Buffer.alloc(8,0xff);
+console.log(buff1);
+
+
+const decode = Buffer.from(buff,"base64").toString("utf8");
+console.log("Decoding the Buffer value.")
+console.log(decode);
+
+
+// Hashing the value using crypto module 
+
+const crypto = require("crypto");
+
+
+const hash = crypto.createHash("sha256").update("Hello").digest("hex");
+
+console.log(hash);
