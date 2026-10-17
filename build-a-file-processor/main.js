@@ -47,3 +47,15 @@ console.log("Generating random buffer value using crypto")
 const random = crypto.randomBytes(8).toString("hex");
 
 console.log(random);
+
+
+
+console.log("Generate random universally unique id")
+const id = crypto.randomUUID();
+console.log(id);
+
+
+const os = require("os");
+console.log(os.totalmem());
+console.log(os.freemem());
+console.log(os.uptime());
