@@ -59,3 +59,14 @@ const os = require("os");
 console.log(os.totalmem());
 console.log(os.freemem());
 console.log(os.uptime());
+
+
+console.log("Number of logical cpu cores: ",os.cpus().length);
+
+
+// check the path
+
+const path = require("path");
+
+const fullPath = path.join(__dirname,"assets","poem.txt");
+console.log(fullPath)
