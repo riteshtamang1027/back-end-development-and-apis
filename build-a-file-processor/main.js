@@ -39,3 +39,11 @@ const crypto = require("crypto");
 const hash = crypto.createHash("sha256").update("Hello").digest("hex");
 
 console.log(hash);
+
+
+// generate random buffer value 
+console.log("Generating random buffer value using crypto")
+
+const random = crypto.randomBytes(8).toString("hex");
+
+console.log(random);
