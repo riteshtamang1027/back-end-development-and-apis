@@ -70,3 +70,63 @@ const path = require("path");
 
 const fullPath = path.join(__dirname,"assets","poem.txt");
 console.log(fullPath)
+
+console.log(path.dirname(fullPath));
+
+
+console.log(path.join("assets","..","server.js"));
+console.log(path.resolve("assets","..","server.js"));
+
+
+// const parts = path.parse("assets/poem.txt");
+// console.log(parts);
+
+
+
+process.platform;
+process.env;
+
+console.log(process.version);
+console.log(process.argv);
+console.log(process.argv[2]);
+
+process.stdout.write("Hello ");
+process.stdout.write("World\n"); // newline only when you add \n
+process.stderr.write("Something went wrong\n");
+
+
+// const fs3 = require("fs");
+// const readable = fs3.createReadStream("assets/poem.txt", { encoding: "utf8" });
+
+// readable.on("data", (chunk) => {
+//   console.log(chunk);
+// });
+
+// readable.on("end", () => {
+//   console.log("Done reading");
+// });
+
+
+// const writable = fs.createWriteStream("assets/stream-output.txt");
+// writable.write("First chunk\n");
+// writable.write("Second chunk\n");
+// writable.end();
+
+const fs0 = require("fs")
+const readable = fs0.createReadStream("assets/poem.txt");
+const writable = fs0.createWriteStream("assets/stream-output.txt");
+
+readable.on("error",(err)=>{
+    console.log("Error reading file: ",err.message);
+})
+
+
+writable.on("error",(err)=>{
+    console.log("Error write file: ",err.message)
+})
+
+writable.on("finished",()=>{
+    console.log("File copied successfully!")
+})
+
+readable.pipe(writable);
