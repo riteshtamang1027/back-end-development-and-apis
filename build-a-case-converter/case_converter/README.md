@@ -14,3 +14,8 @@ console.log(caseConverter.getLowerCase(str)); // hello free code camp!
 console.log(caseConverter.getProperCase(str)); // Hello Free Code Camp!
 console.log(caseConverter.getSentenceCase(str)); //
 ```
+
+## License
+{
+ "license": "MIT"
+ }

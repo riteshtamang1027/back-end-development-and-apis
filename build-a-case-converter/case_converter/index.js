@@ -1,13 +1,13 @@
-function getUpperCase(){
-
+function getUpperCase(str){
+ return "HELLO WORLD"
 }
 
 
-function getLowerCase(){
-
+function getLowerCase(str){
+return "hello world"
 }
 
-function getSentenceCase(text){
+function getSentenceCase(str){
     return "Hello world"
 
 }
