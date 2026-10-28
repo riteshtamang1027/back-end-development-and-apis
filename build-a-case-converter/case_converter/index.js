@@ -1,23 +1,27 @@
 function getUpperCase(str){
- return "HELLO WORLD"
+ return str.toUpperCase();
 }
 
 
 function getLowerCase(str){
-return "hello world"
+return str.toLowerCase();
 }
 
 function getSentenceCase(str){
-    return "Hello world"
+    return str.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, (char)=>{
+        return char.toUpperCase();
+    })
 
 }
 
 function getProperCase(str){
-    return "Hello World"
+    return str.toLowerCase().replace(/\b\w/g, (char)=>{
+        return char.toUpperCase();
+    })
 
 }
 
-getProperCase("heLLo World");
+// getProperCase(str);
 
 
 module.exports={
